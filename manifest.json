@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Interaction Recorder",
+  "version": "1.1",
+  "description": "Graba interacciones, genera código en Playwright y crea reportes HTML.",
+  "permissions": ["activeTab", "scripting", "downloads", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
